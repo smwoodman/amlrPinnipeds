@@ -10,11 +10,12 @@
 #' @param local.prod logical; default is FALSE Should tamatoa create an
 #'   automatic connection to the AMLR_PINNIPEDS database on
 #'   the local SQL Express (see Details for more info)?
+#' @param server.sql character; SQL server suffix. Default is '\\SQLEXPRESS'
 #'
 #' @details
 #' If \code{local.prod} is TRUE, then Tamatoa will attempt to connect to the
 #' AMLR_PINNIPEDS database on the following server:
-#' \code{\link[base]{paste0}(\link[base]{Sys.info}()[["nodename"]], "\\SQLEXPRESS")}
+#' \code{\link[base]{paste0}(\link[base]{Sys.info}()[["nodename"]], server.sql)}
 #'
 #'
 #' @examples
@@ -25,13 +26,13 @@
 #' @export
 tamatoa <- function(...,
                     remote.prod = TRUE, remote.test = TRUE,
-                    local.prod = FALSE) {
+                    local.prod = FALSE, server.sql = "\\SQLEXPRESS") {
   ##############################################################################
   ##### Set connections to dbs, as specified by the user
   db.driver <- "ODBC Driver 18 for SQL Server"
 
   db.server.remote <- "swc-estrella-s"
-  db.server.local <- paste0(Sys.info()[["nodename"]], "\\SQLEXPRESS")
+  db.server.local <- paste0(Sys.info()[["nodename"]], server.sql)
 
   db.name.prod <- "AMLR_PINNIPEDS"
   db.name.test <- "AMLR_PINNIPEDS_Test"
