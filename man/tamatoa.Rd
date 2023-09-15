@@ -36,8 +36,15 @@ AMLR_PINNIPEDS database on the following server:
 \code{\link[base]{paste0}(\link[base]{Sys.info}()[["nodename"]], server.sql)}
 }
 \examples{
-if (interactive()) tamatoa()
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+tamatoa()
 
+# Testing
+tamatoa(remote.prod = FALSE, remote.test = TRUE)
+
+# In the field
+tamatoa(remote.prod = FALSE, remote.test = FALSE, local.prod = TRUE)
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 \url{https://www.fisheries.noaa.gov/about/antarctic-ecosystem-research-division-southwest-fisheries-science-center}
