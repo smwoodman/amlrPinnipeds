@@ -2,7 +2,7 @@
 % Please edit documentation in R/tamatoa.R
 \name{tamatoa}
 \alias{tamatoa}
-\title{Open Tamatoa, the package Shiny app}
+\title{Tamatoa}
 \usage{
 tamatoa(
   ...,
@@ -21,7 +21,7 @@ automatic connection to the AMLR_PINNIPEDS database on estrella?}
 \item{remote.test}{logical; default is TRUE. Should Tamatoa create an
 automatic connection to the AMLR_PINNIPEDS_Test database on estrella?}
 
-\item{local.prod}{logical; default is FALSE Should Tamatoa create an
+\item{local.prod}{logical; default is FALSE. Should Tamatoa create an
 automatic connection to the AMLR_PINNIPEDS database on the local SQL
 Express? (see Details for more info)}
 
